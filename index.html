@@ -153,7 +153,7 @@
     <div id="scr-wish" class="screen">
         <h2>A Little Surprise...</h2>
         <img src="wish.jpg" style="width: 100%; max-height: 250px; object-fit: cover; object-position: top; border-radius: 15px; border: 2px solid var(--gold); margin-top: 10px;">
-        <h3 class="glow-text">Happy Birthday, Jaan!</h3>
+        <h3 class="glow-text">Happy Birthday, Meri Jaan!</h3>
         <button class="action-btn" onclick="next('scr-prank')">Execute Next Phase</button>
     </div>
 
@@ -222,6 +222,8 @@
                 <p>Tumhare birthday ke waste ek chota sa web site karko hun , AI ka use karko , I hope tumna accha lagya .<br>
                 <b>Wish you Happy Birthday and I love you meri jaan 🫂😚</b></p>
                 <p><b>YE DIN KHAAS APKA HAI<br>OR MERA HAR DIN<br>APKE HONE SE KHAAS HAI<br>YOUM-E-PAISAISH<br>KI PUR-KHULOOS MUBARAKBAD<br>MERI JAAN🥰</b></p>
+                <p style="text-align: right; font-family: 'Dancing Script'; font-size: 28px; color: var(--primary); margin-top: 30px;">Always,<br>Your HASSU😎</p>
+                
             </div>
         </div>
         <button class="action-btn" onclick="next('scr-audio')">One Last Thing 🎵</button>
@@ -244,7 +246,7 @@
 
     <div id="scr-thanks" class="screen">
         <h2>Thank You! 💖</h2>
-        <img src="wish.jpg" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 15px; border: 2px solid var(--gold); margin: 10px 0;">
+        <img src="wish.jpg" style="width: 100%; max-height: 200px; object-fit: cover; object-position:top;border-radius: 15px; border: 2px solid var(--gold); margin: 10px 0;">
         <p style="font-weight: bold; font-size: 20px; color: var(--primary);">Once again, Happy Birthday!</p>
         <p>I hope tumna a accha lagya , saal bahar hamesha kush raho ma . Allah tumna kamiyab karende ...</p>
         <div style="font-size: 35px; margin: 15px 0;">🧸🎂✨</div>
@@ -266,7 +268,7 @@
         }
 
         let pinCode = "";
-        const correctPin = "1234";
+        const correctPin = "6362";
 
         function addPin(num) { if(pinCode.length < 4) { pinCode += num; updatePinDisplay(); } }
         function clearPin() { pinCode = ""; updatePinDisplay(); }
@@ -283,7 +285,7 @@
 
         function checkAuth() {
             const val = document.getElementById('auth-input').value.trim().toLowerCase();
-            if(val === 'yourpassword' || val === 'test') { next('scr-wish'); }
+            if(val === 'Mizzuu' || val === 'Hassuu') { next('scr-wish'); }
             else { document.getElementById('auth-err').style.display = 'block'; }
         }
 
@@ -302,7 +304,7 @@
 
         function cutCake() {
             document.getElementById('cake-area').classList.add('split');
-            document.getElementById('cake-hint').innerHTML = "🍰 <strong>Wish made!</strong>";
+            document.getElementById('cake-hint').innerHTML = "🍰 <strong>Be Happy</strong>";
             document.getElementById('cake-next').style.display = 'block';
             confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
         }
