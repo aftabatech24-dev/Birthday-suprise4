@@ -97,18 +97,21 @@
         #no-btn { position: absolute; width: 100px; background: #999; left: 50%; margin-left: 10px; transition: 0.2s ease; border-radius: 50px; padding: 15px; border:none; color:white; font-weight:bold; cursor:pointer;}
         #yes-btn { position: absolute; width: 120px; left: 50%; margin-left: -130px; border-radius: 50px; padding: 15px; border:none; background:var(--primary); color:white; font-weight:bold; cursor:pointer; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4); }
         
-         /* IMAGE MEMORY GRID CSS (Fits all 8 photos without scrolling) */
+        /* IMAGE MEMORY GRID CSS (Faces Fixed - Tall Vertical Boxes) */
         .memory-grid { 
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0; width: 100%; 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 15px 0; width: 100%; 
         }
         .memory-item { 
-            background: white; border: 2px solid var(--gold); border-radius: 12px; 
-            height: 75px; /* Shorter height so all 4 rows fit on the screen */
+            background: white; border: 2px solid var(--gold); border-radius: 8px; 
+            height: 95px; /* Taller vertical shape for portrait photos */
             overflow: hidden; cursor: pointer; transition: transform 0.3s; 
             box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2); 
         }
         .memory-item:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4); }
-        .memory-item img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        
+        /* 'center 15%' perfectly targets faces in portrait photos! */
+        .memory-item img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+
 
 
         /* MODAL POP-UP CSS */
