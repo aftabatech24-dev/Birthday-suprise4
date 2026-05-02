@@ -15,7 +15,17 @@
             --glass: rgba(255, 255, 255, 0.85);
             --gold: #d4af37;
         }
-
+        /* LOVE TAP EFFECT */
+        @keyframes floatHeart {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -100px) scale(1.5); opacity: 0; }
+        }
+        .click-heart {
+            position: absolute; font-size: 24px; pointer-events: none; z-index: 9999;
+            animation: floatHeart 1s ease-out forwards;
+            filter: drop-shadow(0 2px 5px rgba(255, 77, 109, 0.5));
+        }
+        
         /* ANIMATED BACKGROUND */
         body {
             margin: 0; padding: 0; font-family: 'Montserrat', sans-serif;
@@ -31,14 +41,14 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* MAGICAL SNOW EFFECT */
+                /* MAGICAL STARS & DUST EFFECT */
         .snowflakes {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none; z-index: 1;
             background-image: 
-                radial-gradient(white, rgba(255,255,255,0) 2px), 
-                radial-gradient(white, rgba(255,255,255,0) 1px), 
-                radial-gradient(white, rgba(255,255,255,0) 2px);
+                radial-gradient(var(--gold), rgba(212,175,55,0) 3px), 
+                radial-gradient(var(--primary), rgba(255,77,109,0) 2px), 
+                radial-gradient(white, rgba(255,255,255,0) 3px);
             background-size: 550px 550px, 350px 350px, 250px 250px;
             background-position: 0 0, 40px 60px, 130px 270px;
             animation: snowAnim 15s linear infinite;
@@ -47,6 +57,7 @@
             0% { background-position: 0px 0px, 40px 60px, 130px 270px; }
             100% { background-position: 550px 550px, 390px 410px, 380px 520px; }
         }
+
 
         .screen {
             position: absolute; width: 85%; max-width: 400px; padding: 30px;
@@ -307,7 +318,17 @@
             document.getElementById('cake-hint').innerHTML = "🍰 <strong>Be Happy</strong>";
             document.getElementById('cake-next').style.display = 'block';
             confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
-        }
+        }        // MAGICAL CLICK HEARTS
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.className = 'click-heart';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
+        });
+                
     </script>
 </body>
   </html>
